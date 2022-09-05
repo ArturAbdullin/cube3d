@@ -20,6 +20,8 @@ body {
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
+  max-width: 1000px;
+  margin-inline: auto;
 }
 
 .rotation-container {
