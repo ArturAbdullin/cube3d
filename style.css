@@ -1,0 +1,101 @@
+:root {
+  --cube-size: min(30vw, 30vh);
+  --cube-half-size: calc(var(--cube-size) / 2);
+  --ff-size: calc(0.9 * var(--cube-size));
+  --cube-face-color: linear-gradient(rgba(212, 0, 0, 0.1), rgb(56, 0, 238));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 99%;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.rotation-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(var(--cube-size) * 1.5);
+  width: calc(var(--cube-size) * 1.5);
+  border: 1px solid red;
+  perspective: calc(var(--cube-size) * 1.5);
+}
+
+.cube {
+  /* border: 1px solid red; */
+  width: var(--cube-size);
+  height: var(--cube-size);
+  transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.face {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--ff-size);
+  width: 100%;
+  height: 100%;
+  border: 1px solid gray;
+}
+
+.cube__face {
+  position: absolute;
+  background: var(--cube-face-color);
+}
+
+.cube__face-front {
+  background: var(--cube-face-color);
+  transform: translateZ(var(--cube-half-size));
+}
+
+.cube__face-back {
+  background: var(--cube-face-color);
+  transform: rotateY(180deg) translateZ(var(--cube-half-size));
+}
+
+.cube__face-right {
+  transform: rotateY(90deg) translateZ(var(--cube-half-size));
+}
+
+.cube__face-left {
+  transform: rotateY(-90deg) translateZ(var(--cube-half-size));
+}
+
+.cube__face-top {
+  transform: rotateX(90deg) translateZ(var(--cube-half-size));
+}
+
+.cube__face-bottom {
+  transform: rotateX(-90deg) translateZ(var(--cube-half-size));
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.face--select-disabled {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.transition-transform {
+  transition: transform 0.3s ease;
+}
