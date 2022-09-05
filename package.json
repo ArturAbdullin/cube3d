@@ -1,0 +1,14 @@
+{
+  "name": "cube3d",
+  "version": "1.0.0",
+  "description": "an interactive 3d cube using simple transform css property",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "homogeneous coordinates"
+  ],
+  "author": "Artur Abdullin",
+  "license": "ISC"
+}
