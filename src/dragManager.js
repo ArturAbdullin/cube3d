@@ -18,8 +18,9 @@ export class DragManager {
     this.#onMouseDownCallback = mouseDownCallback;
     this.#onDragCallback = dragCallback;
     this.#onMouseMoveHandlerBind = this.#onMouseMoveHandler.bind(this);
-    this.#onMouseDownHandlerBind = this.#onMouseDownHandler;
-    this.#onMouseUpHandlerBind = this.#onMouseUpHandler;
+    this.#onMouseDownHandlerBind = this.#onMouseDownHandler.bind(this);
+    this.#onMouseUpHandlerBind = this.#onMouseUpHandler.bind(this);
+    this.activate();
   }
 
   #onMouseDownHandler(event) {
@@ -34,7 +35,7 @@ export class DragManager {
   }
 
   #onMouseUpHandler() {
-    document.removeEventListener("mosemove", this.#onMouseMoveHandlerBind);
+    document.removeEventListener("mousemove", this.#onMouseMoveHandlerBind);
   }
 
   #onMouseMoveHandler(event) {
