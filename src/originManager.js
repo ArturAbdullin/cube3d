@@ -98,4 +98,28 @@ export class OriginManager {
 
     this.origin = [m11, m12, m13, m21, m22, m23, m31, m32, m33];
   }
+
+  /**
+   *
+   * @param {number} angle [rad]
+   */
+  rorateX(angle) {
+    this.rotate([-1, 0, 0], angle);
+  }
+
+  /**
+   *
+   * @param {number} angle [rad]
+   */
+  rorateY(angle) {
+    this.rotate([0, 1, 0], angle);
+  }
+
+  /**
+   *
+   * @param {number} angle [rad]
+   */
+  rorateZ(angle) {
+    this.rotate([0, 0, 1], angle);
+  }
 }
