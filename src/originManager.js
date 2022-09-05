@@ -103,7 +103,7 @@ export class OriginManager {
    *
    * @param {number} angle [rad]
    */
-  rorateX(angle) {
+  rotateX(angle) {
     this.rotate([-1, 0, 0], angle);
   }
 
@@ -111,7 +111,7 @@ export class OriginManager {
    *
    * @param {number} angle [rad]
    */
-  rorateY(angle) {
+  rotateY(angle) {
     this.rotate([0, 1, 0], angle);
   }
 
@@ -119,7 +119,7 @@ export class OriginManager {
    *
    * @param {number} angle [rad]
    */
-  rorateZ(angle) {
+  rotateZ(angle) {
     this.rotate([0, 0, 1], angle);
   }
 
