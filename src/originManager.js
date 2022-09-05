@@ -122,4 +122,32 @@ export class OriginManager {
   rorateZ(angle) {
     this.rotate([0, 0, 1], angle);
   }
+
+  /**
+   *
+   * @param {"up" | "down" | "left" | "right" | "clockwise" | "counterclockwise"} direction
+   * @param {number} angle [rad]
+   */
+  turn(direction, angle) {
+    switch (direction) {
+      case "up":
+        this.rotate([1, 0, 0], angle);
+        break;
+      case "down":
+        this.rotate([1, 0, 0], -angle);
+        break;
+      case "left":
+        this.rotate([0, 1, 0], -angle);
+        break;
+      case "right":
+        this.rotate([0, 1, 0], angle);
+        break;
+      case "clockwise":
+        this.rotate([0, 0, 1], angle);
+        break;
+      case "counterclockwise":
+        this.rotate([0, 0, 1], -angle);
+        break;
+    }
+  }
 }
