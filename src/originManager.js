@@ -60,43 +60,43 @@ export class OriginManager {
     ];
 
     const m11 =
-      rotMatrix[0] * this.origin[0] +
-      rotMatrix[1] * this.origin[3] +
-      rotMatrix[2] * this.origin[6];
+      rotMatrix[0] * this.#origin[0] +
+      rotMatrix[1] * this.#origin[3] +
+      rotMatrix[2] * this.#origin[6];
     const m12 =
-      rotMatrix[0] * this.origin[1] +
-      rotMatrix[1] * this.origin[4] +
-      rotMatrix[2] * this.origin[7];
+      rotMatrix[0] * this.#origin[1] +
+      rotMatrix[1] * this.#origin[4] +
+      rotMatrix[2] * this.#origin[7];
     const m13 =
-      rotMatrix[0] * this.origin[2] +
-      rotMatrix[1] * this.origin[5] +
-      rotMatrix[2] * this.origin[8];
+      rotMatrix[0] * this.#origin[2] +
+      rotMatrix[1] * this.#origin[5] +
+      rotMatrix[2] * this.#origin[8];
     const m21 =
-      rotMatrix[3] * this.origin[0] +
-      rotMatrix[4] * this.origin[3] +
-      rotMatrix[5] * this.origin[6];
+      rotMatrix[3] * this.#origin[0] +
+      rotMatrix[4] * this.#origin[3] +
+      rotMatrix[5] * this.#origin[6];
     const m22 =
-      rotMatrix[3] * this.origin[1] +
-      rotMatrix[4] * this.origin[4] +
-      rotMatrix[5] * this.origin[7];
+      rotMatrix[3] * this.#origin[1] +
+      rotMatrix[4] * this.#origin[4] +
+      rotMatrix[5] * this.#origin[7];
     const m23 =
-      rotMatrix[3] * this.origin[2] +
-      rotMatrix[4] * this.origin[5] +
-      rotMatrix[5] * this.origin[8];
+      rotMatrix[3] * this.#origin[2] +
+      rotMatrix[4] * this.#origin[5] +
+      rotMatrix[5] * this.#origin[8];
     const m31 =
-      rotMatrix[6] * this.origin[0] +
-      rotMatrix[7] * this.origin[3] +
-      rotMatrix[8] * this.origin[6];
+      rotMatrix[6] * this.#origin[0] +
+      rotMatrix[7] * this.#origin[3] +
+      rotMatrix[8] * this.#origin[6];
     const m32 =
-      rotMatrix[6] * this.origin[1] +
-      rotMatrix[7] * this.origin[4] +
-      rotMatrix[8] * this.origin[7];
+      rotMatrix[6] * this.#origin[1] +
+      rotMatrix[7] * this.#origin[4] +
+      rotMatrix[8] * this.#origin[7];
     const m33 =
-      rotMatrix[6] * this.origin[2] +
-      rotMatrix[7] * this.origin[5] +
-      rotMatrix[8] * this.origin[8];
+      rotMatrix[6] * this.#origin[2] +
+      rotMatrix[7] * this.#origin[5] +
+      rotMatrix[8] * this.#origin[8];
 
-    this.origin = [m11, m12, m13, m21, m22, m23, m31, m32, m33];
+    this.#origin = [m11, m12, m13, m21, m22, m23, m31, m32, m33];
   }
 
   /**
