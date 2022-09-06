@@ -54,6 +54,8 @@ export class RotationControlManager {
 
     if (mouseData.buttons === 1) {
       [x, y, z] = [mX, mY, 0];
+    } else {
+      [x, y, z] = 0;
     }
 
     this.#rotator.rotateXYZ(x, y, z);
