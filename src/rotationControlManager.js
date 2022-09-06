@@ -54,6 +54,18 @@ export class RotationControlManager {
 
     if (mouseData.buttons === 1) {
       [x, y, z] = [mX, mY, 0];
+    } else if (mouseData.buttons === 4) {
+      const elemCenter = this.#rotator.getElementCenterCoordinates();
+      if (mouseData.x > elemCenter.x && mouseData.y < elemCenter.y) {
+        z = mY + mX;
+      } else if (mouseData.x < elemCenter.x && mouseData.y < elemCenter.y) {
+        z = -mY + mX;
+      } else if (mouseData.x < elemCenter.x && mouseData.y > elemCenter.y) {
+        z = -mY - mX;
+      } else if (mouseData.x > elemCenter.x && mouseData.y > elemCenter.y) {
+        z = mY - mX;
+      }
+      [x, y] = [0, 0];
     } else {
       [x, y, z] = 0;
     }
