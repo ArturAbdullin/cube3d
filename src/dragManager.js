@@ -1,5 +1,6 @@
 export class DragManager {
   #active;
+  #domElement
   #dragSensitivity;
   #onMouseDownCallback;
   #onDragCallback;
@@ -11,8 +12,9 @@ export class DragManager {
    *
    * @param {(mouseData: {}) => void} dragCallback
    * @param {(mouseData: {}) => void} mouseDownCallback
+   * @param {Element} domElement
    */
-  constructor(dragCallback, mouseDownCallback) {
+  constructor(dragCallback, mouseDownCallback, domElement) {
     this.#active = false;
     this.#dragSensitivity = 1 / 200;
     this.#onMouseDownCallback = mouseDownCallback;
@@ -20,6 +22,7 @@ export class DragManager {
     this.#onMouseMoveHandlerBind = this.#onMouseMoveHandler.bind(this);
     this.#onMouseDownHandlerBind = this.#onMouseDownHandler.bind(this);
     this.#onMouseUpHandlerBind = this.#onMouseUpHandler.bind(this);
+    this.#domElement = domElement;
     this.activate();
   }
 
@@ -54,14 +57,14 @@ export class DragManager {
   }
 
   activate() {
-    document.addEventListener("mousedown", this.#onMouseDownHandlerBind);
+    this.#domElement.addEventListener("mousedown", this.#onMouseDownHandlerBind);
     document.addEventListener("mouseup", this.#onMouseUpHandlerBind);
     this.#active = true;
   }
 
   destroy() {
     document.removeEventListener("mosemove", this.#onMouseMoveHandlerBind);
-    document.removeEventListener("mousedown", this.#onMouseDownHandlerBind);
+    this.#domElement.removeEventListener("mousedown", this.#onMouseDownHandlerBind);
     document.removeEventListener("mouseup", this.#onMouseUpHandlerBind);
     this.#active = false;
   }

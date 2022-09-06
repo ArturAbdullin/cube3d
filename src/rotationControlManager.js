@@ -13,14 +13,14 @@ export class RotationControlManager {
    */
   constructor(selector) {
     this.#selector = selector;
-    this.#rotator = new DOMElementRotator(
-      document.querySelector(this.#selector)
-    );
+    const element = document.querySelector(this.#selector);
+    this.#rotator = new DOMElementRotator(element);
     this.#onMouseDownHandlerBind = this.#onMouseDownHandler.bind(this);
     this.#onDragRotationHandlerBind = this.#onDragRotationHandler.bind(this);
     this.#dragManager = new DragManager(
       this.#onDragRotationHandlerBind,
-      this.#onMouseDownHandlerBind
+      this.#onMouseDownHandlerBind,
+      element
     );
   }
 
