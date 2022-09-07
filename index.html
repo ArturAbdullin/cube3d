@@ -4,12 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cube 3d</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon-16x16.png"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <noscript>Turn On JavaScript for the app to work.</noscript>
+    <header>
+      <h1>Cube 3d v1.0 desktop only</h1>
+      <div>
+        <p>1. use left mouse button to drag</p>
+        <p>2. use middle mouse button to rotate</p>
+      </div>
+    </header>
     <div class="rotation-container">
-      <div class="cube buba">
+      <div class="cube cube1">
         <div class="face face--select-disabled cube__face cube__face-front">
           1
         </div>
@@ -30,5 +49,6 @@
         </div>
       </div>
     </div>
+    <script src="./dist/main.js"></script>
   </body>
 </html>
